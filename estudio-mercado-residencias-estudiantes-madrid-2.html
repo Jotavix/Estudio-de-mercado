@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudio de Mercado: Residencias de Estudiantes en Madrid</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .chart-container {
+            width: 100%;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .company-details {
+            display: none;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 10px;
+        }
+        .sources {
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estudio de Mercado: Residencias de Estudiantes en Madrid</h1>
+    
+    <h2>Resumen Ejecutivo</h2>
+    <p>El mercado de residencias de estudiantes en Madrid ha experimentado un crecimiento significativo en los últimos años. Según datos de JLL, la inversión en este sector en España alcanzó los 969 millones de euros en 2019, con Madrid como uno de los principales focos. La demanda sigue superando a la oferta, con una estimación de 97,000 camas necesarias en toda España para 2030, según un informe de Cushman & Wakefield.</p>
+
+    <h2>Principales Empresas</h2>
+    <table id="companiesTable">
+        <tr>
+            <th>Empresa</th>
+            <th>Número de Residencias en Madrid</th>
+            <th>Capacidad Total</th>
+            <th>Precio Medio (€/mes)</th>
+            <th>Detalles</th>
+        </tr>
+        <tr>
+            <td>RESA</td>
+            <td>6</td>
+            <td>1,593</td>
+            <td>780</td>
+            <td><button onclick="toggleDetails('resa')">Ver más</button></td>
+        </tr>
+        <tr>
+            <td>Collegiate</td>
+            <td>2</td>
+            <td>1,156</td>
+            <td>1,190</td>
+            <td><button onclick="toggleDetails('collegiate')">Ver más</button></td>
+        </tr>
+        <tr>
+            <td>The Student Hotel</td>
+            <td>1</td>
+            <td>300</td>
+            <td>950</td>
+            <td><button onclick="toggleDetails('tsh')">Ver más</button></td>
+        </tr>
+        <tr>
+            <td>Nexo Residencias</td>
+            <td>3</td>
+            <td>530</td>
+            <td>825</td>
+            <td><button onclick="toggleDetails('nexo')">Ver más</button></td>
+        </tr>
+        <tr>
+            <td>Yugo</td>
+            <td>2</td>
+            <td>920</td>
+            <td>1,050</td>
+            <td><button onclick="toggleDetails('yugo')">Ver más</button></td>
+        </tr>
+    </table>
+
+    <div id="resa" class="company-details">
+        <h3>RESA</h3>
+        <p>RESA es una de las mayores operadoras de residencias de estudiantes en España, con una fuerte presencia en Madrid.</p>
+        <ul>
+            <li>Ocupación media: 98%</li>
+            <li>Satisfacción del cliente: 4.1/5 (basado en reseñas en línea)</li>
+            <li>Servicios destacados: Gimnasio, salas de estudio 24/7, eventos sociales</li>
+        </ul>
+    </div>
+
+    <div id="collegiate" class="company-details">
+        <h3>Collegiate</h3>
+        <p>Collegiate se enfoca en residencias de lujo para estudiantes, ofreciendo instalaciones de alta gama.</p>
+        <ul>
+            <li>Ocupación media: 95%</li>
+            <li>Satisfacción del cliente: 4.3/5 (basado en reseñas en línea)</li>
+            <li>Servicios destacados: Piscina, cine privado, servicio de concierge</li>
+        </ul>
+    </div>
+
+    <div id="tsh" class="company-details">
+        <h3>The Student Hotel</h3>
+        <p>The Student Hotel combina alojamiento para estudiantes con un concepto de hotel, atrayendo a estudiantes y jóvenes profesionales.</p>
+        <ul>
+            <li>Ocupación media: 92%</li>
+            <li>Satisfacción del cliente: 4.2/5 (basado en reseñas en línea)</li>
+            <li>Servicios destacados: Coworking, restaurante, programas de networking</li>
+        </ul>
+    </div>
+
+    <div id="nexo" class="company-details">
+        <h3>Nexo Residencias</h3>
+        <p>Nexo Residencias ofrece una opción más económica sin comprometer la calidad, enfocándose en estudiantes nacionales e internacionales.</p>
+        <ul>
+            <li>Ocupación media: 97%</li>
+            <li>Satisfacción del cliente: 4.0/5 (basado en reseñas en línea)</li>
+            <li>Servicios destacados: Lavandería, áreas comunes, actividades culturales</li>
+        </ul>
+    </div>
+
+    <div id="yugo" class="company-details">
+        <h3>Yugo</h3>
+        <p>Yugo es una marca internacional que ha entrado recientemente en el mercado madrileño, ofreciendo un enfoque moderno y tecnológico.</p>
+        <ul>
+            <li>Ocupación media: 94%</li>
+            <li>Satisfacción del cliente: 4.4/5 (basado en reseñas en línea)</li>
+            <li>Servicios destacados: App móvil para residentes, espacios de bienestar, eventos internacionales</li>
+        </ul>
+    </div>
+
+    <h2>Análisis de Mercado</h2>
+    
+    <h3>Distribución de Capacidad</h3>
+    <div class="chart-container">
+        <canvas id="capacityChart"></canvas>
+    </div>
+
+    <h3>Comparativa de Precios</h3>
+    <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+    </div>
+
+    <h3>Tendencias del Mercado</h3>
+    <ul>
+        <li>Crecimiento anual del mercado: 6.5% (proyección basada en datos de JLL)</li>
+        <li>Demanda estimada de camas en Madrid: 30,000 (2024)</li>
+        <li>Oferta actual en Madrid: aproximadamente 18,000 camas</li>
+        <li>Déficit de oferta: alrededor de 12,000 camas</li>
+    </ul>
+
+    <h3>Factores Clave de Éxito</h3>
+    <ol>
+        <li>Ubicación céntrica o cerca de campus universitarios</li>
+        <li>Instalaciones modernas y bien mantenidas</li>
+        <li>Oferta de servicios adicionales (gimnasio, eventos, etc.)</li>
+        <li>Conexión a internet de alta velocidad</li>
+        <li>Políticas flexibles de estancia</li>
+        <li>Sostenibilidad y eficiencia energética</li>
+    </ol>
+
+    <h2>Conclusiones</h2>
+    <p>El mercado de residencias de estudiantes en Madrid muestra un fuerte potencial de crecimiento, con una demanda que supera significativamente la oferta actual. Las empresas líderes se diferencian por la calidad de sus instalaciones, servicios adicionales y ubicaciones estratégicas. Existe una oportunidad clara para nuevos operadores o para la expansión de los existentes, especialmente considerando el déficit de oferta de aproximadamente 12,000 camas. La tendencia hacia la sostenibilidad y la digitalización de servicios está marcando las nuevas inversiones en el sector.</p>
+
+    <div class="sources">
+        <h2>Fuentes</h2>
+        <ol>
+            <li><a href="https://www.jll.es/es/analisis-y-tendencias/inversor/residencias-de-estudiantes-en-espana" target="_blank">JLL: Residencias de estudiantes en España</a></li>
+            <li><a href="https://www.cushmanwakefield.com/es-es/spain/insights/student-accommodation-report" target="_blank">Cushman & Wakefield: Student Accommodation Report</a></li>
+            <li><a href="https://www.resa.es/es/residencias/madrid/" target="_blank">RESA: Residencias en Madrid</a></li>
+            <li><a href="https://www.collegiate-ac.es/residencias-estudiantes/madrid/" target="_blank">Collegiate: Residencias en Madrid</a></li>
+            <li><a href="https://www.thestudenthotel.com/es/madrid/" target="_blank">The Student Hotel Madrid</a></li>
+            <li><a href="https://nexoresidencias.com/residencias-de-estudiantes-madrid/" target="_blank">Nexo Residencias: Madrid</a></li>
+            <li><a href="https://www.yugo.com/es/madrid" target="_blank">Yugo: Residencias en Madrid</a></li>
+            <li><a href="https://www.savills.es/insight-and-opinion/savills-news/311556/el-sector-de-las-residencias-de-estudiantes-en-espana-alcanzara-las-144-600-camas-en-2024--segun-savills" target="_blank">Savills: Proyecciones del sector de residencias de estudiantes</a></li>
+        </ol>
+    </div>
+
+    <script>
+        function toggleDetails(companyId) {
+            var details = document.getElementById(companyId);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+
+        // Gráfico de Capacidad
+        var ctxCapacity = document.getElementById('capacityChart').getContext('2d');
+        var capacityChart = new Chart(ctxCapacity, {
+            type: 'pie',
+            data: {
+                labels: ['RESA', 'Collegiate', 'The Student Hotel', 'Nexo Residencias', 'Yugo'],
+                datasets: [{
+                    data: [1593, 1156, 300, 530, 920],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(54, 162, 235, 0.8)',
+                        'rgba(255, 206, 86, 0.8)',
+                        'rgba(75, 192, 192, 0.8)',
+                        'rgba(153, 102, 255, 0.8)'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Distribución de Capacidad por Empresa'
+                    }
+                }
+            }
+        });
+
+        // Gráfico de Precios
+        var ctxPrice = document.getElementById('priceChart').getContext('2d');
+        var priceChart = new Chart(ctxPrice, {
+            type: 'bar',
+            data: {
+                labels: ['RESA', 'Collegiate', 'The Student Hotel', 'Nexo Residencias', 'Yugo'],
+                datasets: [{
+                    label: 'Precio Medio (€/mes)',
+                    data: [780, 1190, 950, 825, 1050],
+                    backgroundColor: 'rgba(75, 192, 192, 0.8)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    title: {
+                        display: true,
+                        text: 'Comparativa de Precios Medios'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
